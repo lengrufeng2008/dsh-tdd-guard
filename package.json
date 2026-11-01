@@ -1,0 +1,20 @@
+{
+  "name": "dsh-tdd-guard",
+  "version": "0.1.0",
+  "description": "Test-before-commit guard for DeepSeek Harness: run the project test script and manage an opt-in marked Git hook. Not test-first edit enforcement.",
+  "type": "module",
+  "bin": { "dsh-tdd-guard": "bin/dsh-tdd-guard.mjs" },
+  "exports": {
+    ".": "./plugin/index.js",
+    "./guard": "./src/guard.mjs",
+    "./plugin": "./plugin/index.js",
+    "./icon": "./icon.svg"
+  },
+  "files": ["bin", "src", "plugin", "skills", "icon.svg", "README.md", "NOTICE.md", "LICENSE"],
+  "dsh": { "bundle": { "patch": "./plugin/cordis.patch.yml" } },
+  "engines": { "node": ">=20" },
+  "keywords": ["dsh", "deepseek-harness", "tdd", "testing", "git-hook", "test-gate"],
+  "license": "MIT",
+  "scripts": { "test": "node --test test/*.test.mjs" },
+  "repository": { "type": "git", "url": "https://github.com/lengrufeng2008/dsh-tdd-guard" }
+}
